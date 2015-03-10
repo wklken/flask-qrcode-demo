@@ -37,7 +37,7 @@ def gen_qr_code():
     ecl = request.args.get("ecl", "H")
     # version 1, is a 21x21 matrix
     version = request.args.get("v", 1)
-    border = request.args.get("border", 1)
+    border = request.args.get("border", 0)
 
     box_size = int(size)/27
     qr = qrcode.QRCode(
@@ -58,4 +58,4 @@ def gen_qr_code():
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8000, debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=True)
